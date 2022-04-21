@@ -11,7 +11,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-
+import {Link} from 'react-router-dom';
 
 export const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -36,14 +36,13 @@ export const Navbar = () => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Typography
+          
+            <Button><Link style={{color: "white"}} to="/"><Typography
             variant="h6"
             noWrap
             component="div"
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-          >
-            LOGO
-          </Typography>
+          >LOGO</Typography></Link></Button>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -97,11 +96,12 @@ export const Navbar = () => {
               <Button
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
-              >Journal
+              ><Link to="/journal" style={{color: "white"}}>Journal</Link>
               </Button>
               <Button
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
+                variant="outlined"
               >Poids
               </Button>
               <Button
