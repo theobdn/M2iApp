@@ -11,6 +11,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import AssessmentIcon from '@mui/icons-material/Assessment';
 import {Link} from 'react-router-dom';
 
 export const Navbar = () => {
@@ -92,6 +93,7 @@ export const Navbar = () => {
           >
             LOGO
           </Typography>
+
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
               <Button
                 onClick={handleCloseNavMenu}
@@ -102,12 +104,12 @@ export const Navbar = () => {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
                 variant="outlined"
-              >Poids
+              ><Link to="/poids" style={{color: "white"}}>Poids</Link>
               </Button>
               <Button
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
-              >Statistiques
+              ><AssessmentIcon/><Link to="/statistiques" style={{color: "white"}}>Statistiques</Link>
               </Button>
               <Button
                 onClick={handleCloseNavMenu}
