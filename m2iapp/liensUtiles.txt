@@ -1,0 +1,1 @@
+Guide de l'authentification avec Firebase : "https://www.freecodecamp.org/news/react-firebase-authentication-and-crud-operations/"
