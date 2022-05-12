@@ -2,32 +2,18 @@ import { Avatar, Box, Button, Checkbox, Container, createTheme, CssBaseline, For
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import React from 'react';
 
-function Copyright(props: any) {
-
-    return (
-      <Typography variant="body2" color="text.secondary" align="center" {...props}>
-        {'Copyright © '}
-        <Link color="inherit" href="https://mui.com/">
-          Your Website
-        </Link>{' '}
-        {new Date().getFullYear()}
-        {'.'}
-      </Typography>
-    );
-  }
-
 const LoginPage = () => {
     
-  const theme = createTheme();
+  const theme = createTheme()
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
+        event.preventDefault()
         const data = new FormData(event.currentTarget);
         console.log({
           email: data.get('email'),
           password: data.get('password'),
-        });
-      };
+        })
+      }
         
     return (
       <Grid container component="main" sx={{ height: '100vh' }}>
@@ -107,7 +93,6 @@ const LoginPage = () => {
                 </Link>
               </Grid>
             </Grid>
-            <Copyright sx={{ mt: 5 }} />
           </Box>
         </Box>
       </Grid>

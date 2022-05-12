@@ -20,36 +20,43 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import { Link, Navigate, useNavigate } from "react-router-dom";
 
 export const Navbar = () => {
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
-    null
-  )
-
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
-    null
-  )
-
+  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null)
+  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null)
   const navigate = useNavigate()
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElNav(event.currentTarget);
+    setAnchorElNav(event.currentTarget)
   }
 
   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElUser(event.currentTarget);
+    setAnchorElUser(event.currentTarget)
   }
 
   const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
+    setAnchorElNav(null)
   }
 
   const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
+    setAnchorElUser(null)
   }
 
   const handleLogOut = () => {
     handleCloseUserMenu()
-    sessionStorage.clear()
+    sessionStorage.removeItem('Auth Token')
     navigate("/login")
+    window.location.reload()
+  }
+
+  const navigateToJournalPage = () => {
+    navigate("/journal")
+  }
+
+  const navigateToPoidsPage = () => {
+    navigate("/poids")
+  }
+
+  const navigateToStatistiquesPage = () => {
+    navigate("/statistiques")
   }
 
   return (
@@ -120,37 +127,31 @@ export const Navbar = () => {
 
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Button
-              onClick={handleCloseNavMenu}
+              onClick={navigateToJournalPage}
               sx={{ my: 2, color: "white", display: "block" }}
             >
               <Box sx={{ display: "flex", alignItems: "center" }}>
                 <DiningIcon sx={{margin: "5px"}}/>
-              <Link to="/journal" style={{ color: "white" }}>
                 Journal
-              </Link>
               </Box>
             </Button>
             <Button
-              onClick={handleCloseNavMenu}
+              onClick={navigateToPoidsPage}
               sx={{ my: 2, color: "white", display: "block" }}
               variant="outlined"
             >
               <Box sx={{ display: "flex", alignItems: "center" }}>
                 <MonitorWeightIcon sx={{margin: "5px"}}/>
-                <Link to="/poids" style={{ color: "white" }}>
                 Poids
-              </Link>
               </Box>
             </Button>
             <Button
-              onClick={handleCloseNavMenu}
+              onClick={navigateToStatistiquesPage}
               sx={{ my: 2, color: "white", display: "block" }}
             >
               <Box sx={{ display: "flex", alignItems: "center" }}>
                 <AssessmentIcon sx={{margin: "5px"}}/>
-                <Link to="/statistiques" style={{ color: "white" }}>
                   Statistiques
-                </Link>
               </Box>
             </Button>
             <Button
@@ -159,9 +160,7 @@ export const Navbar = () => {
             >
               <Box sx={{ display: "flex", alignItems: "center" }}>
                 <BookIcon sx={{margin: "5px"}}/>
-                <Link to="/" style={{ color: "white" }}>
                 Mes recettes
-                </Link>
               </Box>
             </Button>
           </Box>

@@ -7,7 +7,7 @@ interface BasicButtonProps {
 
 export const BasicButton = ({title, handleAction}: BasicButtonProps) => {
     return (
-        <Button variant="contained" onClick={handleAction}>
+        <Button fullWidth variant="contained" onClick={handleAction}>
             {title}
         </Button>
     )
