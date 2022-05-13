@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Routes, Route, Link, useNavigate } from "react-router-dom";
 import { Home } from "./Primary/Pages/Home/Home";
 import { Journal } from "./Primary/Pages/Journal/Journal";
-import LoginPage from "./Primary/Pages/Login/LoginPage";
 import PoidsPage from "./Primary/Pages/Poids/PoidsPage";
 import { RegisterPage } from "./Primary/Pages/Register/RegisterPage";
 import StatistiquePage from "./Primary/Pages/Statistiques/StatistiquePage";
@@ -97,7 +96,6 @@ function App() {
             />
           }
         />
-        <Route path="/loginPage" element={<LoginPage />} />
         <Route path="/" element={<Home />} />
         <Route path="/journal" element={<Journal />} />
         <Route path="/poids" element={<PoidsPage />} />

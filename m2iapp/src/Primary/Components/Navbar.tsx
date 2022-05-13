@@ -18,6 +18,7 @@ import BookIcon from '@mui/icons-material/Book';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { Link, Navigate, useNavigate } from "react-router-dom";
+import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt';
 
 export const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null)
